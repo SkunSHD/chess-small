@@ -16,9 +16,7 @@
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.3",
-    "style-loader": "^0.21.0",
-    "webpack-dev-server": "^3.1.4",
-    "webpack-md5-hash": "0.0.6"
+    "style-loader": "^0.21.0"
   },
   "scripts": {
     "start": "webpack-dev-server --open",
