@@ -14,7 +14,8 @@ module.exports = function(env, argv) {
         devtool: env.production ? 'source-maps' : 'eval',
         devServer: {
             contentBase: './dist',
-            hot: true
+            hot: true,
+            port: 4000
         },
         module: {
             rules: [
@@ -57,7 +58,7 @@ module.exports = function(env, argv) {
             new webpack.HotModuleReplacementPlugin()
         ],
         output: {
-            filename: '[name].bundle.js',
+            filename: '[name].[hash].js',
             path: path.resolve(__dirname, 'dist')
         },
     };
