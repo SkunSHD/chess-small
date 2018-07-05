@@ -14,11 +14,15 @@ module.exports = function(env, argv) {
         devtool: env.production ? 'source-maps' : 'eval',
         devServer: {
             contentBase: './dist',
-            // hot: true,
+            hot: true,
             port: 4000
         },
         module: {
             rules: [
+                {
+                    test: /\.html$/,
+                    loader: "raw-loader" // loaders: ['raw-loader'] is also perfectly acceptable.
+                },
                 {
                     test: /\.js$/,
                     exclude: /(node_modules|bower_components)/,
@@ -56,7 +60,11 @@ module.exports = function(env, argv) {
                 filename: 'index.html',
                 hash: true
             }),
-            // new webpack.HotModuleReplacementPlugin()
+            new webpack.HotModuleReplacementPlugin(),
+
+            new webpack.DefinePlugin({
+                'process.env.NODE_ENV': JSON.stringify(env.production ? 'production' : 'development')
+            })
         ],
         output: {
             filename: '[name].[hash].js',
