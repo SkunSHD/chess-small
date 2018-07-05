@@ -19,6 +19,16 @@ module.exports = function(env, argv) {
         module: {
             rules: [
                 {
+                    test: /\.js$/,
+                    exclude: /(node_modules|bower_components)/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['env']
+                        }
+                    }
+                },
+                {
                     test: /\.scss$/,
                     use: [
                         // creates style nodes from JS strings

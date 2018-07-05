@@ -1,6 +1,7 @@
 import printMe from './js/print.js';
 import './styles/main.scss'
 
+
 function component() {
     var element = document.createElement('div');
     var btn = document.createElement('button');
