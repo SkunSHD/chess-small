@@ -14,7 +14,7 @@ module.exports = function(env, argv) {
         devtool: env.production ? 'source-maps' : 'eval',
         devServer: {
             contentBase: './dist',
-            hot: true,
+            // hot: true,
             port: 4000
         },
         module: {
@@ -38,7 +38,7 @@ module.exports = function(env, argv) {
                         {
                             loader: "sass-loader", // compiles Sass to CSS
                             options: {
-                                sourceMap: true
+                                sourceMap: !env.production
                             }
                         }
                     ]
@@ -47,19 +47,20 @@ module.exports = function(env, argv) {
         },
         plugins: [
             new CleanWebpackPlugin(['dist']),
-
             new MiniCssExtractPlugin({
-                filename: "[name].css",
-                chunkFilename: "[id].css",
+                filename: "[name].[hash].css"
             }),
-            new HtmlWebpackPlugin({
-                title: 'Hot Module Replacement'
+            new HtmlWebpackPlugin(  {
+                inject: 'body',
+                template: './src/index.html',
+                filename: 'index.html',
+                hash: true
             }),
-            new webpack.HotModuleReplacementPlugin()
+            // new webpack.HotModuleReplacementPlugin()
         ],
         output: {
             filename: '[name].[hash].js',
             path: path.resolve(__dirname, 'dist')
-        },
+        }
     };
 };

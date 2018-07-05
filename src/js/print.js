@@ -1,3 +1,3 @@
 export default function printMe() {
-    console.log('I 11   get called from print.js!');
+    console.log('Iget called from print.js!');
 }
