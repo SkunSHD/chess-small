@@ -4,7 +4,6 @@ if(process.env.NODE_ENV !== 'production') {
     require('./index.html')
 }
 
-
 function component() {
     var element = document.createElement('div');
     var btn = document.createElement('button');

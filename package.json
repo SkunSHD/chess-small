@@ -5,6 +5,7 @@
   "private": true,
   "main": "index.js",
   "dependencies": {
+    "siimple": "^3.1.0",
     "webpack": "^4.14.0",
     "webpack-cli": "^3.0.8"
   },
