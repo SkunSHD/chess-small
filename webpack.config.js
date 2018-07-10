@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
-module.exports = function(env, argv) {
+module.exports = function (env, argv) {
     return {
         mode: env.production ? 'production' : 'development',
         entry: {
@@ -46,6 +46,12 @@ module.exports = function(env, argv) {
                             }
                         }
                     ]
+                },
+                {
+                    test: /\.(png|svg|jpg|gif)$/,
+                    use: [
+                        'file-loader'
+                    ]
                 }
             ]
         },
@@ -54,7 +60,7 @@ module.exports = function(env, argv) {
             new MiniCssExtractPlugin({
                 filename: "[name].[hash].css"
             }),
-            new HtmlWebpackPlugin(  {
+            new HtmlWebpackPlugin({
                 inject: 'body',
                 template: './src/index.html',
                 filename: 'index.html',

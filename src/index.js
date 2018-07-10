@@ -1,5 +1,7 @@
 import printMe from './js/print.js';
-import './styles/main.scss'
+import './styles/main.scss';
+
+
 if(process.env.NODE_ENV !== 'production') {
     require('./index.html')
 }
@@ -19,7 +21,7 @@ function component() {
 }
 
 let element = component(); // Store the element to re-render on print.js changes
-document.body.appendChild(element);
+// document.body.appendChild(element);
 
 if (module.hot) {
     module.hot.accept('./js/print.js', function () {
