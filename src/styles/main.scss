@@ -1,5 +1,6 @@
-@import "siimple/scss/_all.scss";
-@import './navigation.scss';
+@import 'normalize.scss';
+@import 'navigation.scss';
+//@import 'responsiveNavigation.scss';
 
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #777;
@@ -7,4 +8,5 @@ $primary-color: #777;
 body {
   font: 100% $font-stack;
   color: $primary-color;
+  line-height: 1.6em;
 }
