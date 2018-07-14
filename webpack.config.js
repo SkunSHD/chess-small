@@ -11,21 +11,31 @@ module.exports = function (env, argv) {
         entry: {
             app: './src/index.js'
         },
-        devtool: env.production ? 'source-maps' : 'eval',
-        devServer: {
-            contentBase: './dist',
-            hot: true,
-            port: 4000
+        output: {
+            filename: 'bundle.js',
+            path: path.resolve(__dirname, 'dist')
         },
+        devtool: env.production ? 'source-maps' : 'eval',
         module: {
             rules: [
                 {
                     test: /\.html$/,
-                    loader: "raw-loader" // loaders: ['raw-loader'] is also perfectly acceptable.
+                    use: ['html-loader']
+                },
+                {
+                    test: /\.(png|svg|jpg|gif)$/,
+                    use: [{
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'img/', // for actual copying file
+                            publicPath: 'img/' // for reference paths in html
+                        }
+                    }]
                 },
                 {
                     test: /\.js$/,
-                    exclude: /(node_modules|bower_components)/,
+                    exclude: /node_modules/,
                     use: {
                         loader: 'babel-loader',
                         options: {
@@ -46,35 +56,17 @@ module.exports = function (env, argv) {
                             }
                         }
                     ]
-                },
-                {
-                    test: /\.(png|svg|jpg|gif)$/,
-                    use: [
-                        'file-loader'
-                    ]
                 }
             ]
         },
         plugins: [
             new CleanWebpackPlugin(['dist']),
             new MiniCssExtractPlugin({
-                filename: "[name].[hash].css"
+                filename: "[name].css"
             }),
             new HtmlWebpackPlugin({
-                inject: 'body',
-                template: './src/index.html',
-                filename: 'index.html',
-                hash: true
-            }),
-            new webpack.HotModuleReplacementPlugin(),
-
-            new webpack.DefinePlugin({
-                'process.env.NODE_ENV': JSON.stringify(env.production ? 'production' : 'development')
+                template: 'src/index.html'
             })
-        ],
-        output: {
-            filename: '[name].[hash].js',
-            path: path.resolve(__dirname, 'dist')
-        }
+        ]
     };
 };
