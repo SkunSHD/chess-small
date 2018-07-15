@@ -1,30 +1,57 @@
 .container {
-  padding: 0 15px;
   margin: 0 auto;
+  padding-right: $containerMainIndent;
+  padding-left: $containerMainIndent;
 }
 
-// nav menu
+.header {
+  height: $headerHeight;
+}
 
+
+// nav menu
 .navigation {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
+  height: $navigationHeight;
+  padding-right: $containerIndentM;
+  padding-left: $containerIndentM;
 
   @include screenWidth($minWidth: $screen_M) {
     align-items: flex-end;
+    padding-right: $containerMainIndent;
+    padding-left: $containerMainIndent;
   }
 }
 
 .nav-logo {
+  text-decoration: none;
+  color: $primary-color;
+
+  &:active {
+    color: $primary-active-color;
+  }
   .logo-text {
     font-family: 'Lobster', cursive;
-    font-size: 24px;
+    font-size: 28px;
+    vertical-align: middle;
   }
 }
 
-.nav-menu {
+.nav-list {
   display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+
 
   ul {
     padding: 0;
@@ -32,16 +59,25 @@
     text-align: center;
     li {
       display: block;
+      border-bottom: 1px solid #eee;
       a {
+        letter-spacing: 1px;
+        color: #666;
+        text-transform: uppercase;
+        font-weight: 700;
         text-decoration: none;
-        &:hover {
-          color: #11beff;
-        }
+        padding: 10px 10px;
+        display: block;
       }
     }
   }
 
+  &.visible {
+    display: block;
+  }
+
   @include screenWidth($minWidth: $screen_M) {
+    position: static;
     display: block;
 
     ul {
@@ -49,6 +85,11 @@
       margin: 0 auto;
       li {
         display: inline-block;
+        a {
+          &:hover {
+            color: #11beff;
+          }
+        }
       }
     }
   }
@@ -59,7 +100,7 @@
   cursor: pointer;
   padding: 2px;
 
-  &:hover {
+  &:active {
     background: #ebebeb;
     border-radius: 10%;
   }

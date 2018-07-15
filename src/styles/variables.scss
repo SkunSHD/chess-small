@@ -1,5 +1,18 @@
 $containerIndent: 10px;
+$containerIndentM: 15px;
+$containerIndentL: 20px;
+$containerIndentXL: 25px;
+$containerIndentXXL: 30px;
+$containerIndentHuge: 35px;
+$containerMainIndent: 65px;
+$navigationHeight: 70px;
+$navigationHeightSmall: 50px;
+$headerHeight: $navigationHeight + 20px;
+
+// Colors
 $primary-color: #777;
+$primary-active-color: #11beff;
+
 
 // Media queries breakpoints
 // --------------------------------------------------

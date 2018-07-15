@@ -1,4 +1,5 @@
 import './styles/main.scss';
+import './js/navigation.js';
 
 function component() {
     var element = document.createElement('div');
