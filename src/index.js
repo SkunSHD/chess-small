@@ -1,5 +1,5 @@
-import printMe from './js/print.js';
 import './styles/main.scss';
+import './js/navigation.js';
 
 function component() {
     var element = document.createElement('div');
@@ -8,21 +8,13 @@ function component() {
     element.innerHTML = ['11---11', '----'].join(' ');
 
     btn.innerHTML = 'Click me and check the console!';
-    btn.onclick = printMe;
+    btn.onclick = function() {
+        console.log('%%---> click')
+    };
 
     element.appendChild(btn);
-
     return element;
 }
 
-let element = component(); // Store the element to re-render on print.js changes
+let element = component();
 // document.body.appendChild(element);
-
-if (module.hot) {
-    module.hot.accept('./js/print.js', function () {
-        console.log('Accepting the updated printMe module!');
-        document.body.removeChild(element);
-        element = component(); // Re-render the "component" to update the click handler
-        document.body.appendChild(element);
-    })
-}
