@@ -1,7 +1,7 @@
 .container {
   margin: 0 auto;
-  padding-right: $containerMainIndent;
-  padding-left: $containerMainIndent;
+  padding-right: $containerIndentM;
+  padding-left: $containerIndentM;
 }
 
 .header {
@@ -12,6 +12,7 @@
 // nav menu
 .navigation {
   position: fixed;
+  background-color: #fff;
   top: 0;
   right: 0;
   left: 0;
@@ -20,8 +21,8 @@
   flex-direction: row;
   align-items: center;
   height: $navigationHeight;
-  padding-right: $containerIndentM;
-  padding-left: $containerIndentM;
+  padding-right: $containerIndent;
+  padding-left: $containerIndent;
 
   @include screenWidth($minWidth: $screen_M) {
     align-items: flex-end;
@@ -38,6 +39,8 @@
     color: $primary-active-color;
   }
   .logo-text {
+    display: inline-block;
+    margin: 0;
     font-family: 'Lobster', cursive;
     font-size: 28px;
     vertical-align: middle;
