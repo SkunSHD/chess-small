@@ -1,13 +1,35 @@
 @import 'normalize.scss';
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'columns.scss';
 @import 'navigation.scss';
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #777;
+
+// Base scss styles
+html {
+  font-size: 62.5%; // 10px for use rem
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
 body {
-  font: 100% $font-stack;
+  min-width: 320px;
+  //FOUC
+  opacity: 1 !important;
+  // http://caniuse.com/#feat=css-scroll-behavior
+  // http://codepen.io/CSSKing/pen/OVRgKO
+  scroll-behavior: smooth;
+  // Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.25;
   color: $primary-color;
-  line-height: 1.6em;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
 }

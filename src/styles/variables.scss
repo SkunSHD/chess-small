@@ -1,0 +1,35 @@
+$containerIndent: 10px;
+$primary-color: #777;
+
+// Media queries breakpoints
+// --------------------------------------------------
+
+// Phone
+// 0 - 480px = $screen_S
+$screen_S: 480px;
+// Large phone
+// 480px - 768 = $screen_M
+$screen_M: 768px;
+// Tablet
+// 768 - 1024 = $screen_L
+$screen_L: 1024px;
+// Laptop
+// 1024 - 1280 = $screen_XL
+$screen_XL: 1280px;
+// Monitor
+// 1280 - 1440 = $screen_XXL
+$screen_XXL: 1440px;
+// HD monitor
+// 1440 - 1920 = $screen_HD
+$screen_HD: 1920px;
+// Retina monitor
+// 1920 - 2560 = $screen_Retina
+$screen_Retina: 2560px;
+
+// Grid columns width
+// --------------------------------------------------
+$colWidth: 100%;
+$colWith20pct: ($colWidth / 5);
+$colWith25pct: ($colWidth / 4);
+$colWith33pct: ($colWidth / 3);
+$colWith50pct: ($colWidth / 2);

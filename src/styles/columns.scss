@@ -1,0 +1,35 @@
+.column-wrap {
+  @include cf;
+  margin-right: -$containerIndent;
+  margin-left: -$containerIndent;
+  // https://stackoverflow.com/questions/9836151/what-is-this-css-selector-class-span
+  & > [class*=column-] {
+    box-sizing: border-box;
+    float: left;
+    min-height: 1px;
+    padding-right: $containerIndent;
+    padding-left: $containerIndent;
+  }
+}
+
+.column-wrap_type_reverse {
+
+  & > [class*=column-] {
+    float: right;
+  }
+}
+
+.column-wrap_hide_screen-s {
+
+  @include screenWidth($maxWidth: $screen_S) {
+
+    & > [class*=column-] {
+      float: none;
+      width: 100%;
+    }
+  }
+}
+
+.column-50pct {
+  width: $colWith50pct;
+}

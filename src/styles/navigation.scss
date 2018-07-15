@@ -1,21 +1,18 @@
 .container {
-  padding: 0px 15px;
-  margin: 0px auto;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
-// nav bar
+// nav menu
+
 .navigation {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  .burger {
-    display: none;
-    cursor: pointer;
-    padding: 2px;
-    &:hover {
-      background: #ebebeb;
-      border-radius: 10%;
-    }
+  flex-direction: row;
+  align-items: center;
+
+  @include screenWidth($minWidth: $screen_M) {
+    align-items: flex-end;
   }
 }
 
@@ -27,10 +24,14 @@
 }
 
 .nav-menu {
+  display: none;
+
   ul {
     padding: 0;
+    margin: 0;
+    text-align: center;
     li {
-      display: inline-block;
+      display: block;
       a {
         text-decoration: none;
         &:hover {
@@ -39,55 +40,31 @@
       }
     }
   }
-}
 
-// media
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
+  @include screenWidth($minWidth: $screen_M) {
+    display: block;
 
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-
-// nav menu
-@media (max-width: 768px) {
-  .container {
-    width: 100%;
-  }
-  .navigation {
-    flex-direction: column;
-    align-items: center;
-    .burger {
-      display: inline-block;
-    }
-  }
-  .nav-menu {
     ul {
-      text-align: center;
+      display: block;
       margin: 0 auto;
       li {
-        display: block;
-        a {
-          text-decoration: none;
-          &:hover {
-            color: #11beff;
-          }
-        }
+        display: inline-block;
       }
     }
   }
-  .collapsed {
+}
+
+.burger {
+  display: inline-block;
+  cursor: pointer;
+  padding: 2px;
+
+  &:hover {
+    background: #ebebeb;
+    border-radius: 10%;
+  }
+
+  @include screenWidth($minWidth: $screen_M) {
     display: none;
   }
 }

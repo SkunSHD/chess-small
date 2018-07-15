@@ -1,0 +1,32 @@
+// Media queries for width
+// --------------------------------------------------
+
+@mixin screenWidth($minWidth: null, $maxWidth: null) {
+  @if not $minWidth {
+    @media screen and (max-width: $maxWidth - 1) {
+      @content;
+    }
+  } @else if not $maxWidth {
+    @media screen and (min-width: $minWidth) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $minWidth) and (max-width: $maxWidth - 1) {
+      @content;
+    }
+  }
+}
+
+// Clearfix
+// http://nicolasgallagher.com/micro-clearfix-hack/
+@mixin cf {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
