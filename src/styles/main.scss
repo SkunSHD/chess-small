@@ -33,3 +33,13 @@ img {
   vertical-align: middle;
   max-width: 100%;
 }
+
+.container {
+  margin: 0 auto;
+  padding-right: $containerIndentM;
+  padding-left: $containerIndentM;
+}
+
+.header {
+  height: $headerHeight;
+}
