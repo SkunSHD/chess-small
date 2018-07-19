@@ -1,0 +1,81 @@
+.divider-short {
+  width: 60px;
+  height: 1px;
+  background: #aaa;
+  margin: 0 auto;
+}
+
+.block-form {
+
+  .message-form {
+    margin: 0 auto;
+    width: 290px;
+    text-align: center;
+  }
+
+  .message-form * {
+    padding: 6px 12px;
+    border-radius: 4px;
+
+  }
+
+  .block-form_title {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+ .block-form_description {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .message-form_input, .message-form_text-area {
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+
+    &::placeholder {
+      color: #7D7B7D;
+    }
+    &:focus {
+      outline: 0;
+      border-color: #3fbbc0;
+      box-shadow: 0 0 8px rgba(102,175,233,.6);
+    }
+  }
+
+  .message-form_input {
+    height: 30px;
+  }
+
+  .message-form_text-area {
+    height: 70px;
+    resize: none;
+  }
+
+  .message-form_btn {
+    outline: none;
+    width: 100%;
+    text-shadow: 0 0 1px rgba(255,255,255,0.3);
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    &:hover {
+      color: #fff;
+      background-color: #449d44;
+      border-color: #398439;
+    }
+  }
+
+  @include screenWidth($minWidth: $screen_S) {
+    .message-form {
+      width: 500px;
+    }
+  }
+}

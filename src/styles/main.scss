@@ -3,6 +3,7 @@
 @import 'mixins.scss';
 @import 'columns.scss';
 @import 'navigation.scss';
+@import 'sendMessage.scss';
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
@@ -38,8 +39,17 @@ img {
   margin: 0 auto;
   padding-right: $containerIndentM;
   padding-left: $containerIndentM;
+
+  @include screenWidth($minWidth: $screen_M) {
+    padding-right: $containerMainIndent;
+    padding-left: $containerMainIndent;
+  }
 }
 
 .header {
   height: $headerHeight;
 }
+
+// positioning
+// size
+// styles
