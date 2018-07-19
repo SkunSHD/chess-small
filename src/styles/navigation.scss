@@ -1,6 +1,5 @@
 .navigation {
   position: fixed;
-  background-color: #fff;
   top: 0;
   right: 0;
   left: 0;
@@ -11,9 +10,12 @@
   height: $navigationHeight;
   padding-right: $containerIndent;
   padding-left: $containerIndent;
+  background-color: #fafafa;
+
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
 
   @include screenWidth($minWidth: $screen_M) {
-    align-items: flex-end;
     padding-right: $containerMainIndent;
     padding-left: $containerMainIndent;
   }
@@ -23,7 +25,8 @@
   text-decoration: none;
   color: $primary-color;
 
-  &:active {
+
+  &:active, &:hover {
     color: $primary-active-color;
   }
   .logo-text {
@@ -41,7 +44,7 @@
   top: 100%;
   right: 0;
   left: 0;
-  background-color: #fff;
+  background-color: #fafafa;
 
 
   ul {
@@ -50,7 +53,6 @@
     text-align: center;
     li {
       display: block;
-      border-bottom: 1px solid #eee;
       a {
         letter-spacing: 1px;
         color: #666;

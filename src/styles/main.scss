@@ -4,6 +4,7 @@
 @import 'columns.scss';
 @import 'navigation.scss';
 @import 'sendMessage.scss';
+@import 'contacts.scss';
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 
@@ -48,6 +49,19 @@ img {
 
 .header {
   height: $headerHeight;
+}
+
+section {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  &:last-child {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+a {
+  cursor: pointer;
 }
 
 // positioning
