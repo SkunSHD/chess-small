@@ -63,18 +63,21 @@ img {
   }
 }
 
-section {
-  margin-top: 25px;
-  margin-bottom: 25px;
-  &:last-child {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
 
 a {
   cursor: pointer;
 }
+
+
+[class*=section-]:after {
+  content: '';
+  width: 100px;
+  background-color: #b7b7bf;
+  height: 1px;
+  display: block;
+  margin:0 auto;
+}
+
 
 // positioning
 // size
