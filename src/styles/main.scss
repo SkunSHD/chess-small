@@ -2,6 +2,7 @@
 @import 'variables.scss';
 @import 'mixins.scss';
 @import 'columns.scss';
+@import 'header.scss';
 @import 'navigation.scss';
 @import 'sendMessage.scss';
 @import 'contacts.scss';
@@ -38,17 +39,28 @@ img {
 
 .container {
   margin: 0 auto;
-  padding-right: $containerIndentM;
-  padding-left: $containerIndentM;
+  padding-right: $containerIndent;
+  padding-left: $containerIndent;
 
   @include screenWidth($minWidth: $screen_M) {
-    padding-right: $containerMainIndent;
-    padding-left: $containerMainIndent;
+    padding-right: $containerIndentM;
+    padding-left: $containerIndentM;
   }
-}
 
-.header {
-  height: $headerHeight;
+  @include screenWidth($minWidth: $screen_L) {
+    padding-right: $containerIndentL ;
+    padding-left: $containerIndentL;
+  }
+
+  @include screenWidth($minWidth: $screen_XL) {
+    padding-right: $containerIndentXL ;
+    padding-left: $containerIndentXL;
+  }
+
+  @include screenWidth($minWidth: $screen_XXL) {
+    padding-right: $containerIndentXXL ;
+    padding-left: $containerIndentXXL;
+  }
 }
 
 section {

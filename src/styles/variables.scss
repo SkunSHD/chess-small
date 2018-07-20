@@ -1,18 +1,16 @@
-$containerIndent: 10px;
-$containerIndentM: 15px;
-$containerIndentL: 20px;
-$containerIndentXL: 25px;
-$containerIndentXXL: 30px;
-$containerIndentHuge: 35px;
-$containerMainIndent: 65px;
+$containerIndent: 15px;
+$containerIndentM: 65px;
+$containerIndentL: 150px;
+$containerIndentXL: 150px;
+$containerIndentXXL: 220px;
+
 $navigationHeight: 70px;
-$navigationHeightSmall: 50px;
+$navigationHeightM: 90px;
 $headerHeight: $navigationHeight + 20px;
 
 // Colors
 $primary-color: #777;
 $primary-active-color: #11beff;
-
 
 // Media queries breakpoints
 // --------------------------------------------------
@@ -38,6 +36,7 @@ $screen_HD: 1920px;
 // Retina monitor
 // 1920 - 2560 = $screen_Retina
 $screen_Retina: 2560px;
+
 
 // Grid columns width
 // --------------------------------------------------
