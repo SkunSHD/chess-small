@@ -4,6 +4,11 @@
   flex-direction: row;
   align-items: center;
   height: $navigationHeight;
+  transition: height 0.7s;
+
+  @include screenWidth($minWidth: $screen_M) {
+    height: $navigationHeightM;
+  }
 }
 
 .nav-logo {
@@ -52,11 +57,14 @@
 
   &.visible {
     display: block;
+    animation-name: slide-in;
+    animation-duration: 0.1s;
   }
 
   @include screenWidth($minWidth: $screen_M) {
     position: static;
     display: block;
+    border-top: 0;
 
     ul {
       display: block;
@@ -86,4 +94,13 @@
   @include screenWidth($minWidth: $screen_M) {
     display: none;
   }
+}
+
+@keyframes slide-in {
+  from {
+    top: -165%;
+    z-index: -1;
+    border: 0;
+  }
+  to { top: 100%; }
 }
