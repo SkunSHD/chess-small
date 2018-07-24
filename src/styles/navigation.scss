@@ -55,6 +55,7 @@
   }
 
   @include screenWidth($minWidth: $screen_M) {
+    border-top: 0;
     position: static;
     display: block;
 
