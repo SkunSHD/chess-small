@@ -8,7 +8,12 @@
     // onScroll
     function onScrollMenuCollapseHandler(event) {
         const isTop = document.documentElement.scrollTop === 0;
-        document.querySelector('.navigation').style.height = isTop ? '60px' : '50px';
+        const isMobile = document.documentElement.clientWidth < 768;
+
+        const normalHeight = isMobile ? '60px' : '70px';
+        const collapsedHeight = isMobile ? '50px' : '50px';
+
+        document.querySelector('.navigation').style.height = isTop ? normalHeight : collapsedHeight;
     }
     document.body.onscroll = onScrollMenuCollapseHandler;
 })();

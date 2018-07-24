@@ -1,5 +1,6 @@
 import './styles/main.scss';
 import './js/navigation.js';
+import './js/service-worker.js';
 
 function component() {
     var element = document.createElement('div');
