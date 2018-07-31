@@ -53,7 +53,7 @@ img {
   }
 
   @include screenWidth($minWidth: $screen_XL) {
-    padding-right: $containerIndentXL ;
+    padding-right: $containerIndentXL;
     padding-left: $containerIndentXL;
   }
 

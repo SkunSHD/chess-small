@@ -24,7 +24,7 @@
     "webpack-dev-server": "^3.1.4"
   },
   "scripts": {
-    "start": "webpack-dev-server --env.dev --open",
+    "start": "webpack-dev-server --env.dev",
     "build": "webpack --env.production"
   },
   "keywords": [],

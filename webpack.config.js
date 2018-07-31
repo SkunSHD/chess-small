@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -9,11 +8,13 @@ module.exports = function (env, argv) {
     return {
         mode: env.production ? 'production' : 'development',
         entry: {
-            app: './src/index.js'
+            build: './src/index.js',
+            'service-worker': './src/js/service-worker.js'
         },
         output: {
-            filename: 'bundle.js',
-            path: path.resolve(__dirname, 'dist')
+            filename: '[name].js',
+            path: path.resolve(__dirname, 'dist'),
+            publicPath: '/'
         },
         devtool: env.production ? 'source-maps' : 'eval',
         module: {

@@ -1,6 +1,8 @@
 import './styles/main.scss';
 import './js/navigation.js';
-import './js/service-worker.js';
+import registerServiceWorker from './js/register-service-worker.js';
+
+registerServiceWorker();
 
 function component() {
     var element = document.createElement('div');
