@@ -14,7 +14,6 @@ module.exports = function (env, argv) {
         output: {
             filename: '[name].js',
             path: path.resolve(__dirname, 'dist'),
-            publicPath: '/'
         },
         devtool: env.production ? 'source-maps' : 'eval',
         module: {
