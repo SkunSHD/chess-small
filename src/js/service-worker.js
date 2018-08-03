@@ -3,32 +3,32 @@ const cacheFiles = [
     './',
     './index.html',
     './img/logo.png',
-    './img/promo_kids.png',
+    './img/promo_kids.jpg',
     './img/menu.png',
     './build.js'
 ];
 
 self.addEventListener('install', function(event) {
-    console.log('[ServiceWorker] Installed');
+    console.log('[SW] Installed');
 
     event.waitUntil(
         caches.open(cacheName)
             .then((cache)=> {
-                console.log('[ServiceWorker] Caching cacheFiles')
+                console.log('[SW] Caching cacheFiles')
                 return cache.addAll(cacheFiles)
                     .then(self.skipWaiting())
-                    .catch((err) => console.log('%%---> [ServiceWorker] Caching cacheFiles err', err));
+                    .catch((err) => console.log('[SW] Caching cacheFiles err', err));
             })
     );
 });
 
 self.addEventListener('activate', function(event) {
-    console.log('%%---> [ServiceWorker] Activated')
+    console.log('[SW] Activated')
     event.waitUntil(
         caches.keys().then(function(oldCacheNames) {
             return Promise.all(oldCacheNames.map(function(oldCacheName) {
                 if(oldCacheName !== cacheName) {
-                    console.log('%%---> Removing old cache files from ' + oldCacheName);
+                    console.log('Removing old cache files from ' + oldCacheName);
                     return caches.delete(oldCacheName);
                 }
             }))
@@ -38,14 +38,14 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-    console.log('%%---> [ServiceWorker] Fetching', event.request.url)
+    console.log('[SW] Fetching', event.request.url)
 
     event.respondWith(
         caches.match(event.request)
             .then(function(response) {
                 // Cache hit - return response
                 if (response) {
-                    console.log("----|> no cache has been found")
+                    console.log("----> [SW] Returned from cache", response.url)
                     return response;
                 }
 

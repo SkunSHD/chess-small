@@ -9,11 +9,14 @@ module.exports = function (env, argv) {
         mode: env.production ? 'production' : 'development',
         entry: {
             build: './src/index.js',
-            'service-worker': './src/js/service-worker.js'
         },
         output: {
             filename: '[name].js',
             path: path.resolve(__dirname, 'dist'),
+        },
+        devServer: {
+            port: 3000,
+            contentBase: path.join(__dirname, 'src/js')
         },
         devtool: env.production ? 'source-maps' : 'eval',
         module: {
