@@ -30,3 +30,12 @@
     clear: both;
   }
 }
+
+
+// RESPONSIVE IMG SASS MIXIN
+@mixin img-responsive($widthImg: 1, $heightImg: 1, $width: 100%, $position: relative) {
+  position: $position;
+  width: $width;
+  height: 0;
+  padding-bottom: ($heightImg/$widthImg) * $width;
+}

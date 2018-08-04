@@ -16,7 +16,7 @@ module.exports = function (env, argv) {
         },
         devServer: {
             port: 3000,
-            contentBase: path.join(__dirname, 'src/js')
+            contentBase: [path.join(__dirname, 'src/js'), path.join(__dirname, 'src')]
         },
         devtool: env.production ? 'source-maps' : 'eval',
         module: {
