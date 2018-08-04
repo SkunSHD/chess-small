@@ -1,5 +1,5 @@
 .section-promo {
-
+  // ------- dynamic img loading with blur -------
   .image-placeholder-wrapper {
     @include img-responsive($widthImg: 530, $heightImg: 354);
     overflow: hidden;
@@ -29,6 +29,7 @@
   .image-placeholder {
     filter: blur(50px);
   }
+  // ------- dynamic img loading with blur -------
 
   .promo__title {
     margin: 0;
