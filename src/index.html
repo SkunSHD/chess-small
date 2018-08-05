@@ -91,11 +91,11 @@
 
     <section  class="section-form">
         <div class="container">
-            <div class="block-form">
+            <div class="contact-form">
                 <h2 class="block-form_title">Запишитесь на урок!</h2>
                 <p class="block-form_description">Напишите мне через этот сайт и я свяжусь с Вами, чтобы договориться о занятии.</p>
                 <form class="message-form" method="POST" onsubmit="return false">
-                    <input class="message-form_input" type="text" placeholder="Ваш телефон, email, соц сеть ссылка...">
+                    <input class="message-form_input" type="text" placeholder="Ваш телефон, email, соц сеть ссылка..." required minlength="6">
                     <textarea class="message-form_text-area" name="questions" id="formTextArea" placeholder="Ваши вопросы и пожелания"></textarea>
                     <button class="message-form_btn">Отпавить сообщение</button>
                 </form>
