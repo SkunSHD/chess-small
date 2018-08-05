@@ -2,9 +2,6 @@ const cacheName = 'v3';
 const cacheFiles = [
     './',
     './index.html',
-    './img/logo.png',
-    './img/promo_kids_placeholder.png',
-    './img/promo_kids_medium.jpg',
     './build.js'
 ];
 
