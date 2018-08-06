@@ -1,10 +1,10 @@
-// click handle
+// menu click handle
 function onMenuClickToggleHandler(event) {
     document.querySelector('.nav-list').classList.toggle('visible');
 }
 document.getElementById("collapse-toggle").onclick = onMenuClickToggleHandler;
 
-// onScroll
+// onScroll handle
 function onScrollMenuCollapseHandler(event) {
     const isTop = document.documentElement.scrollTop === 0;
     const isMobile = document.documentElement.clientWidth < 768;
@@ -16,14 +16,28 @@ function onScrollMenuCollapseHandler(event) {
 }
 document.body.onscroll = onScrollMenuCollapseHandler;
 
+// navigation click handle
+const links = document.querySelectorAll('.nav-list ul > li a');
 
-function onNavClick(e) {
-    const links = document.querySelectorAll('.nav-list ul > li a');
+window.addEventListener("hashchange", ()=> {
     links.forEach(link => {
+        // clear old active class
         if(link.classList.contains('active')) {
             link.classList.remove('active');
         }
+        // add new active class
+        if(link.getAttribute("href") === location.hash) {
+            link.classList.add('active');
+        }
     });
-    e.target.classList.add('active');
-}
-document.querySelectorAll('.nav-list ul > li').forEach(link => link.onclick = onNavClick);
+}, false);
+
+links.forEach(link => {
+    if(link.getAttribute("href") === location.hash) {
+        link.classList.add('active');
+    }
+});
+
+links.forEach(link => {
+    link.onclick = (e)=> location.href = link.getAttribute("href");
+});
