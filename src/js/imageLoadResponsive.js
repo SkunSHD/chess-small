@@ -16,10 +16,6 @@ function loadResponsiveImage(wrapper) {
     imgResponsive.classList.add('image-responsive');
     imgResponsive.src = wrapper.dataset[responsiveImgName];
     imgResponsive.onload = function () {
-        // dynamic img size set
-        const imgRatio = this.height/this.width * 100;
-        wrapper.style.paddingBottom = imgRatio + '%';
-        // unblur the image
         imgResponsive.classList.add('loaded')
     };
 
