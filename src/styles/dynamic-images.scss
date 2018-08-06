@@ -1,0 +1,31 @@
+.image-placeholder-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background-color: #f6f6f6;
+}
+
+.image-placeholder, .image-responsive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 1s linear;
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+.image-responsive {
+  opacity: 0;
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+.image-placeholder {
+  filter: blur(50px);
+}

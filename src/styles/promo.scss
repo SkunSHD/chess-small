@@ -1,35 +1,4 @@
 .section-promo {
-  // ------- dynamic img loading with blur -------
-  .image-placeholder-wrapper {
-    @include img-responsive($widthImg: 530, $heightImg: 354);
-    overflow: hidden;
-    background-color: #f6f6f6;
-  }
-
-  .image-placeholder, .image-responsive {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    transition: opacity 1s linear;
-
-    &.loaded {
-      opacity: 1;
-    }
-  }
-
-  .image-responsive {
-    opacity: 0;
-
-    &.loaded {
-      opacity: 1;
-    }
-  }
-
-  .image-placeholder {
-    filter: blur(50px);
-  }
-  // ------- dynamic img loading with blur -------
 
   .promo__title {
     margin: 0;

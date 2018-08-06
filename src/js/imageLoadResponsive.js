@@ -1,7 +1,10 @@
 window.onload = function() {
-    const wrapper = document.querySelector('.image-placeholder-wrapper'),
-        placeholder = wrapper.querySelector('.image-placeholder'),
-        responsiveImgName = document.documentElement.clientWidth < 768 ? 'small' : 'medium';
+    document.querySelectorAll('.image-placeholder-wrapper').forEach(wrapperEl => loadResponsiveImage(wrapperEl));
+};
+
+function loadResponsiveImage(wrapper) {
+    const placeholder = wrapper.querySelector('.image-placeholder');
+    const responsiveImgName = document.documentElement.clientWidth < 768 ? 'mobile' : 'desktop';
 
     const imgPlaceholder = new Image();
     imgPlaceholder.src = placeholder.src;
@@ -13,8 +16,12 @@ window.onload = function() {
     imgResponsive.classList.add('image-responsive');
     imgResponsive.src = wrapper.dataset[responsiveImgName];
     imgResponsive.onload = function () {
+        // dynamic img size set
+        const imgRatio = this.height/this.width * 100;
+        wrapper.style.paddingBottom = imgRatio + '%';
+        // unblur the image
         imgResponsive.classList.add('loaded')
     };
 
     wrapper.appendChild(imgResponsive);
-};
+}
