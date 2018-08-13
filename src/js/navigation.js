@@ -38,6 +38,25 @@ links.forEach(link => {
     }
 });
 
-links.forEach(link => {
-    link.onclick = (e)=> location.href = link.getAttribute("href");
+links.forEach(link => link.onclick = (e)=> location.href = link.getAttribute("href"));
+
+// anchor smooth jumps
+const destinationElsMap = (()=>{
+    const destEls = document.getElementsByTagName('section');
+    const destElsArr = Array.prototype.slice.call(destEls);
+    const destElsArrMapped = destElsArr.map(el => [el.getAttribute('class'), el]);
+    return new Map(destElsArrMapped);
+})();
+
+document.querySelectorAll("a[href^=\"#\"]").forEach((anchor) => {
+    anchor.addEventListener("click", function (ev) {
+        ev.preventDefault();
+
+        const destClass = this.getAttribute("href").replace('#', 'section-');
+        const targetElement = destinationElsMap.get(destClass);
+
+        targetElement.scrollIntoView({
+            behavior: "smooth"
+        });
+    });
 });

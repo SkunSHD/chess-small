@@ -5,6 +5,7 @@
   "private": true,
   "main": "index.js",
   "dependencies": {
+    "smoothscroll-polyfill": "^0.4.3",
     "webpack": "^4.14.0",
     "webpack-cli": "^3.0.8"
   },
