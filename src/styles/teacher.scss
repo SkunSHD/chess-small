@@ -1,0 +1,44 @@
+.section-teacher {
+  .entry {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    //flex-direction: row;
+    //flex-direction: column;
+    flex-flow: wrap;
+
+    .teacher__svg-icon {
+      height: 50px;
+      width: 50px;
+
+      @include screenWidth($minWidth: $screen_M) {
+        height: 80px;
+        width: 80px;
+      }
+    }
+    .entry-item {
+      .entry__title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+    .entry__description {
+      flex: 75%;
+      margin-left: 25%;
+      .entry-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+      }
+    }
+    .entry-item-left {
+      flex: 25%;
+    }
+    .entry-item-right {
+      flex: 75%;
+    }
+
+  }
+}
