@@ -1,7 +1,26 @@
 .contacts {
-  .contacts__svg-icon {
+  @include screenWidth($minWidth: $screen_M) {
+    .contacts__main-info {
+      display: flex;
+
+      .entry__item_left, .entry__item_right {
+        flex: 50%;
+      }
+    }
+  }
+
+  .svg-icon {
     height: 120px;
     width: 120px;
+  }
+  .svg-earth {
+    height: 300px;
+    width: 300px;
+
+    @include screenWidth($minWidth: $screen_M) {
+      height: 400px;
+      width: 400px;
+    }
   }
 
 }
